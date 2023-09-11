@@ -6,13 +6,6 @@ import (
 	"time"
 )
 
-// List of all capabilities available
-var Capabilities = []string{
-	"super strong", "fulfill wishes", "fighting capabilities", "fly", "swim",
-	"sing", "run", "cry", "change color", "talk", "dance", "code", "design",
-	"drive", "walk", "talk chinese", "lazy",
-}
-
 // Global values
 var idMutex sync.Mutex
 var lastAssignedID int

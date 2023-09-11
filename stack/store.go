@@ -66,7 +66,8 @@ func CreateBacklogUnicorns(stack *UnicornStack) {
 		time.Sleep(restockTime)
 		// Generate unicorn atributes
 		name := util.GenerateRandomName(adjectives, names)
-		capabilities := util.GenerateRandomCapabilities(util.Capabilities, 3)
+		listOfCapabilities := repository.GetCapabilities()
+		capabilities := util.GenerateRandomCapabilities(listOfCapabilities, 3)
 		// Create unicorn
 		unicorn := entity.Unicorn{
 			Name:         name,

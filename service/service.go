@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/mateo-tavera/unicorn-builder/entity"
+	"github.com/mateo-tavera/unicorn-builder/repository"
 	"github.com/mateo-tavera/unicorn-builder/stack"
 	"github.com/mateo-tavera/unicorn-builder/util"
 )
@@ -31,7 +32,8 @@ func createLiveUnicorns(names []string, adjectives []string, amount int) []entit
 
 	for i := 0; i < amount; i++ {
 		name := util.GenerateRandomName(adjectives, names)
-		capabilities := util.GenerateRandomCapabilities(util.Capabilities, 3)
+		listOfCapabilities := repository.GetCapabilities()
+		capabilities := util.GenerateRandomCapabilities(listOfCapabilities, 3)
 
 		unicorn := entity.Unicorn{
 			Name:         name,
